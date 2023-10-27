@@ -1,3 +1,3 @@
 variables:
-  - system_message: v3
+  - system_message: v4
   - mail: x@y
