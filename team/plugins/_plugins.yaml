@@ -1,11 +1,23 @@
 plugins:
-  - id: cloudbees-casc-client # cap lst
-  - id: cloudbees-casc-items-api # cap lst dep
-  - id: cloudbees-casc-items-commons # cap lst dep
-  - id: cloudbees-casc-items-controller # cap lst
-  - id: cloudbees-jenkins-advisor # cap lst
-  - id: configuration-as-code # cap lst
-  - id: git # cap lst
-  - id: managed-master-hibernation # cap lst
-  - id: cloudbees-prometheus # 3rd lst
-  - id: saml # cap lst
+  - id: cloudbees-casc-client
+  - id: cloudbees-casc-items-controller
+  - id: cloudbees-github-reporting
+  - id: cloudbees-groovy-view
+  - id: cloudbees-inactive-items
+  - id: cloudbees-jenkins-advisor
+  - id: cloudbees-monitoring
+  - id: cloudbees-nodes-plus
+  - id: cloudbees-pipeline-explorer
+  - id: cloudbees-quiet-start
+  - id: cloudbees-ssh-slaves
+  - id: cloudbees-view-creation-filter
+  - id: cloudbees-workflow-template
+  - id: cloudbees-workflow-ui
+  - id: configuration-as-code
+  - id: email-ext
+  - id: git-server
+  - id: github-branch-source
+  - id: infradna-backup
+  - id: operations-center-cloud
+  - id: saml
+  - id: workflow-aggregator

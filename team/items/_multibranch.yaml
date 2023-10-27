@@ -1,0 +1,16 @@
+removeStrategy:
+  rbac: SYNC
+  items: SYNC
+items:
+- kind: multibranch
+  name: pipeline
+  description: ${repository}
+  displayName: pipeline
+  projectFactory:
+    workflowBranchProjectFactory:
+      scriptPath: Jenkinsfile
+  sourcesList:
+  - branchSource:
+      source:
+        git:
+          remote: ${repository}
