@@ -18,7 +18,6 @@ jobs:
           ref: effective
       - name: Render Bundles
         run: |
-          ls -la main
           rm -rf effective/*
           cp -r main/* effective/
           cd effective
@@ -26,7 +25,7 @@ jobs:
             if [ "$d" == "base/" ] ; then
               continue
             fi
-            cp -r main/* $d
+            cp -r base/* $d
           done
       - name: Commit and Push
         run: |
