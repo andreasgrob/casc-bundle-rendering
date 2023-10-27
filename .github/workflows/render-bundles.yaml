@@ -18,6 +18,7 @@ jobs:
           ref: effective
       - name: Render Bundles
         run: |
+          ls -la
           rm -rf effective/*
           cp -r main/* effective/
           cd effective
