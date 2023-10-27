@@ -27,6 +27,7 @@ jobs:
             fi
             cp -r base/* $d
           done
+          rm -rf base
       - name: Commit and Push
         run: |
           git config --global user.name "Bundle Rendering"
