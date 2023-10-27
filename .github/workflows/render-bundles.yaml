@@ -1,0 +1,36 @@
+name: CasC Bundle Rendering
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          path: main
+      - name: Checkout effective
+        uses: actions/checkout@v4
+        with:
+          path: effective
+          ref: effective
+      - name: Render Bundles
+        run: |
+          rm -rf effective/*
+          cp -r main/* effective/
+          cd effective
+          for d in */ ; do
+            if [ "$d" == "base/" ] ; then
+              continue
+            fi
+            cp -r main/* $d
+          done
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Bundle Rendering"
+          git config --global user.email "91457104+andreasgrob@users.noreply.github.com"
+          cd effective
+          git add .
+          git commit -m "Render bundles from $GITHUB_SHA"
+          git push
