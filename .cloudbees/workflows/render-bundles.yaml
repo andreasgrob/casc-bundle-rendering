@@ -8,14 +8,32 @@ on:
 jobs:
   build:
     steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
+      - name: Checkout main
+        uses: cloudbees-io/checkout@v1
+        with:
+          path: main
+      - name: Checkout effective
+        uses: cloudbees-io/checkout@v1
+        with:
+          path: effective
+          ref: effective
+      - name: Render Bundles
         run: |
-          ls -la base
-    needs:
-      - checkout
-  checkout:
-    steps:
-      - uses: cloudbees-io/checkout@v1
-
+          rm -rf effective/*
+          cp -r main/* effective/
+          cd effective
+          for d in */ ; do
+            if [ "$d" == "base/" ] ; then
+              continue
+            fi
+            cp -r base/* $d
+          done
+          rm -rf base
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Bundle Rendering"
+          git config --global user.email "91457104+andreasgrob@users.noreply.github.com"
+          cd effective
+          git add .
+          git commit -m "Render bundles from $GITHUB_SHA"
+          git push
