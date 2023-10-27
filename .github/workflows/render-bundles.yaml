@@ -28,15 +28,7 @@ jobs:
             cp -r base/* $d
           done
           rm -rf base
-      - name: check for changes
-        run: |
-          if git diff --exit-code; then
-            echo "::set-env name=changes_exist::false"
-          else
-            echo "::set-env name=changes_exist::true"
-          fi
       - name: Commit and Push
-        if: ${{ env.changes_exist == 'true' }}
         run: |
           git config --global user.name "Bundle Rendering"
           git config --global user.email "91457104+andreasgrob@users.noreply.github.com"
