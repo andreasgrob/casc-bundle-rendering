@@ -37,5 +37,5 @@ jobs:
           git config --global user.email "91457104+andreasgrob@users.noreply.github.com"
           cd effective
           git add .
-          git commit -m "Render bundles from $GITHUB_SHA"
+          git diff-index --quiet HEAD || git commit -m "Render bundles from $GITHUB_SHA"
           git push
