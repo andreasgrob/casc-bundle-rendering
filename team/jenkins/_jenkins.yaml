@@ -147,11 +147,6 @@ unclassified:
   cascItemsConfiguration:
     variableInterpolationEnabledForAdmin: false
     variableInterpolationEnabledForNonAdmin: false
-  cloudbeesPrometheus:
-    collectingMetricsPeriodInSeconds: 120
-    defaultNamespace: "cb_ci"
-    path: "prometheus"
-    useAuthenticatedEndpoint: false
   experimentalPlugins:
     enabled: false
   fingerprints:
@@ -159,12 +154,6 @@ unclassified:
     storage: "file"
   headerLabel:
     text: "${header_label}"
-  hibernationConfiguration:
-    activities:
-    - "build"
-    - "web"
-    enabled: false
-    gracePeriod: 120
   mailer:
     charset: "UTF-8"
     useSsl: false
