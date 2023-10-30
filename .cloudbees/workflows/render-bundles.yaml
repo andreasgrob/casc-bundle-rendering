@@ -31,7 +31,7 @@ jobs:
           done
           rm -rf base
       - name: Commit and Push
-        docker://bitnami/git:2.42.0
+        uses: docker://bitnami/git:2.42.0
         run: |
           git config --global user.name "Bundle Rendering"
           git config --global user.email "91457104+andreasgrob@users.noreply.github.com"
