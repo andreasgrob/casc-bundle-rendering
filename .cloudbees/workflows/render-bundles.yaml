@@ -28,13 +28,13 @@ jobs:
               continue
             fi
             cp -r base/* $d
+            mkdir -p $d/plugin-catalog
           done
           rm -rf base
       - name: Calculate Plugin Dependencies
         uses: docker://ghcr.io/kyounger/casc-plugin-dependency-calculation:v3.2.1
         run: |
           cd effective
-          mkdir -p team/plugin-catalog
           /home/casc-user/run.sh -t mm -v 2.414.3.8 -f team/plugins/plugins.yaml \
                                                     -F team/plugins/plugins.yaml \
                                                     -c team/plugin-catalog/plugin-catalog.yaml
