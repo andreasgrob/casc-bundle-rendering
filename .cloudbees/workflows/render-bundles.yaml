@@ -30,6 +30,10 @@ jobs:
             cp -r base/* $d
           done
           rm -rf base
+      - name: Calculate Plugin Dependencies
+        uses: docker://ghcr.io/kyounger/casc-plugin-dependency-calculation:v3.2.1
+        run: |
+          ./run.sh --help
       - name: Commit and Push
         uses: docker://bitnami/git:2.42.0
         run: |
