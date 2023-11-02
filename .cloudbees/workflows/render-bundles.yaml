@@ -33,7 +33,10 @@ jobs:
       - name: Calculate Plugin Dependencies
         uses: docker://ghcr.io/kyounger/casc-plugin-dependency-calculation:v3.2.1
         run: |
-          /home/casc-user/run.sh --help
+          mkdir -p team/plugin-catalog
+          /home/casc-user/run.sh -t mm -v 2.414.3.8 -f team/plugins/plugins.yaml \
+                                                    -F team/plugins/plugins.yaml \
+                                                    -c team/plugin-catalog/plugin-catalog.yaml
       - name: Commit and Push
         uses: docker://bitnami/git:2.42.0
         run: |
