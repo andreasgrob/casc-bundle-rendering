@@ -36,7 +36,8 @@ jobs:
         uses: docker://ghcr.io/kyounger/casc-plugin-dependency-calculation:v3.2.1
         run: |
           cd effective
-          /home/casc-user/run.sh -t mm -v 2.414.3.8 -f team/plugins/plugins.yaml \
+          /home/casc-user/run.sh -t mm -v 2.414.3.8 -f team/plugins/_plugins.yaml \
+                                                    -f team/plugins/plugins.yaml \
                                                     -F team/plugins/plugins.yaml \
                                                     -c team/plugin-catalog/plugin-catalog.yaml
       - name: Commit and Push
