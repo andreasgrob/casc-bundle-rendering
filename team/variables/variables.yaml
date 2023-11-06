@@ -1,4 +1,4 @@
 variables:
-  - system_message: v15
+  - system_message: v16
   - mail: x@y
   - repository: https://github.com/andreasgrob/multi-branch-pipeline.git
