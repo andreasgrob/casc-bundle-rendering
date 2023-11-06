@@ -31,7 +31,7 @@ jobs:
             mkdir -p $d/plugin-catalog
           done
           rm -rf base
-          chown -R 1000:1001 effective
+          chown -R 1000:1001 .
       - name: Calculate Plugin Dependencies
         uses: docker://ghcr.io/kyounger/casc-plugin-dependency-calculation:v3.2.1
         run: |
