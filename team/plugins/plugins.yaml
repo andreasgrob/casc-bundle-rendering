@@ -16,4 +16,35 @@
 #  src - used as a source plugin for this list
 
 plugins:
+  - id: ant # cap dep
+  - id: artifactory # 3rd lst
+  - id: cloudbees-casc-client # cap lst
+  - id: cloudbees-casc-items-controller # cap lst
+  - id: cloudbees-github-reporting # cap lst
+  - id: cloudbees-groovy-view # cap lst
   - id: cloudbees-hashicorp-vault # cap lst
+  - id: cloudbees-inactive-items # cap lst
+  - id: cloudbees-jenkins-advisor # cap lst
+  - id: cloudbees-monitoring # cap lst
+  - id: cloudbees-nodes-plus # cap lst
+  - id: cloudbees-pipeline-explorer # cap lst
+  - id: cloudbees-quiet-start # cap lst
+  - id: cloudbees-ssh-slaves # cap lst
+  - id: cloudbees-view-creation-filter # cap lst
+  - id: cloudbees-workflow-template # cap lst
+  - id: cloudbees-workflow-ui # cap lst
+  - id: config-file-provider # cap dep
+  - id: configuration-as-code # cap lst dep
+  - id: email-ext # cap lst
+  - id: git-server # cap lst
+  - id: github-branch-source # cap lst
+  - id: gradle # cap dep
+  - id: infradna-backup # cap lst
+  - id: javadoc # cap dep
+  - id: jsch # cap dep
+  - id: junit # cap dep
+  - id: matrix-project # cap dep
+  - id: maven-plugin # 3rd dep
+  - id: operations-center-cloud # cap lst
+  - id: saml # cap lst
+  - id: workflow-aggregator # cap lst
