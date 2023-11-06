@@ -46,6 +46,7 @@ jobs:
           git config --global user.name "Bundle Rendering"
           git config --global user.email "91457104+andreasgrob@users.noreply.github.com"
           cd effective
+          chown -R root:root .
           git add .
           git diff-index --quiet HEAD || git commit -m "Render bundles from $GITHUB_SHA"
           git push
